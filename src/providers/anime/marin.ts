@@ -24,7 +24,7 @@ class Marin extends AnimeParser {
   private async getToken(): Promise<string[]> {
     const token: string[] = [];
 
-    const response = await axios.get('https://marin.moe/anime', {
+    const response = await axios.get('https://corsproxy.io/?https://marin.moe/anime', {
       headers: {
         Referer: 'https://marin.moe/anime',
         Cookie: '__ddg1_=;__ddg2_=;',
@@ -42,7 +42,7 @@ class Marin extends AnimeParser {
     let data;
     try {
       const response = await axios.post(
-        'https://marin.moe/anime',
+        'https://corsproxy.io/?https://marin.moe/anime',
         {
           page: page,
           sort: 'rel-d',
@@ -100,7 +100,7 @@ class Marin extends AnimeParser {
     let data;
     try {
       const response = await axios.post(
-        'https://marin.moe/anime',
+        'https://corsproxy.io/?https://marin.moe/anime',
         {
           page: page,
           sort: 'az-a',
@@ -158,7 +158,7 @@ class Marin extends AnimeParser {
     let data;
     try {
       const response = await axios.post(
-        `https://marin.moe/anime/${id}`,
+        `https://corsproxy.io/?https://marin.moe/anime/${id}`,
         {},
         {
           headers: {
@@ -260,7 +260,7 @@ class Marin extends AnimeParser {
     let data;
     try {
       const response = await axios.post(
-        `https://marin.moe/anime/${id}`,
+        `https://corsproxy.io/?https://marin.moe/anime/${id}`,
         {},
         {
           headers: {

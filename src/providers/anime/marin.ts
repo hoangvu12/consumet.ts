@@ -18,6 +18,8 @@ class Marin extends AnimeParser {
       headers: {
         Referer: 'https://marin.moe/anime',
         Cookie: '__ddg1_=;__ddg2_=;',
+        'User-Agent':
+          'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36',
       },
     });
 
@@ -300,12 +302,3 @@ class Marin extends AnimeParser {
 }
 
 export default Marin;
-
-(async () => {
-  const marin = new Marin();
-  const search = await marin.search('vermeil in gold');
-  const anime = await marin.fetchAnimeInfo(search.results[0].id);
-  const sources = await marin.fetchEpisodeSources(anime.episodes![0].id);
-
-  console.log(sources);
-})();

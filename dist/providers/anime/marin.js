@@ -19,7 +19,7 @@ class Marin extends models_1.AnimeParser {
             const token = await this.getToken();
             let data;
             try {
-                const response = await axios_1.default.post('https://marin.moe/anime', {
+                const response = await axios_1.default.post('https://corsproxy.io/?https://marin.moe/anime', {
                     page: page,
                     sort: 'rel-d',
                     filter: {
@@ -72,7 +72,7 @@ class Marin extends models_1.AnimeParser {
             const token = await this.getToken();
             let data;
             try {
-                const response = await axios_1.default.post('https://marin.moe/anime', {
+                const response = await axios_1.default.post('https://corsproxy.io/?https://marin.moe/anime', {
                     page: page,
                     sort: 'az-a',
                     filter: {
@@ -126,7 +126,7 @@ class Marin extends models_1.AnimeParser {
             const token = await this.getToken();
             let data;
             try {
-                const response = await axios_1.default.post(`https://marin.moe/anime/${id}`, {}, {
+                const response = await axios_1.default.post(`https://corsproxy.io/?https://marin.moe/anime/${id}`, {}, {
                     headers: {
                         Origin: 'https://marin.moe/',
                         Referer: `https://marin.moe/anime/${id}`,
@@ -209,7 +209,7 @@ class Marin extends models_1.AnimeParser {
             const token = await this.getToken();
             let data;
             try {
-                const response = await axios_1.default.post(`https://marin.moe/anime/${id}`, {}, {
+                const response = await axios_1.default.post(`https://corsproxy.io/?https://marin.moe/anime/${id}`, {}, {
                     headers: {
                         Origin: 'https://marin.moe/',
                         Referer: `https://marin.moe/anime/${id}`,
@@ -251,7 +251,7 @@ class Marin extends models_1.AnimeParser {
     }
     async getToken() {
         const token = [];
-        const response = await axios_1.default.get('https://marin.moe/anime', {
+        const response = await axios_1.default.get('https://corsproxy.io/?https://marin.moe/anime', {
             headers: {
                 Referer: 'https://marin.moe/anime',
                 Cookie: '__ddg1_=;__ddg2_=;',
@@ -263,11 +263,11 @@ class Marin extends models_1.AnimeParser {
     }
 }
 exports.default = Marin;
-// (async () => {
-//   const marin = new Marin();
-//   const search = await marin.search('vermeil in gold');
-//   const anime = await marin.fetchAnimeInfo(search.results[0].id);
-//   const sources = await marin.fetchEpisodeSources(anime.episodes![0].id);
-//   console.log(sources);
-// })();
+(async () => {
+    const marin = new Marin();
+    const search = await marin.search('vermeil in gold');
+    const anime = await marin.fetchAnimeInfo(search.results[0].id);
+    const sources = await marin.fetchEpisodeSources(anime.episodes[0].id);
+    console.log(sources);
+})();
 //# sourceMappingURL=marin.js.map

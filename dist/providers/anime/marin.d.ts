@@ -1,4 +1,4 @@
-import { AnimeParser, ISearch, IAnimeInfo, IAnimeResult, ISource, IEpisodeServer } from '../../models';
+import { AnimeParser, IAnimeInfo, IAnimeResult, IEpisodeServer, ISearch, ISource } from '../../models';
 /**
  * @attention Cloudflare bypass is **REQUIRED**.
  */

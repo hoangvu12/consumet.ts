@@ -1,16 +1,6 @@
 import axios from 'axios';
-import { load } from 'cheerio';
 
-import {
-  AnimeParser,
-  ISearch,
-  IAnimeInfo,
-  MediaStatus,
-  IAnimeResult,
-  ISource,
-  IAnimeEpisode,
-  IEpisodeServer,
-} from '../../models';
+import { AnimeParser, IAnimeInfo, IAnimeResult, IEpisodeServer, ISearch, ISource } from '../../models';
 
 /**
  * @attention Cloudflare bypass is **REQUIRED**.
@@ -311,11 +301,11 @@ class Marin extends AnimeParser {
 
 export default Marin;
 
-// (async () => {
-//   const marin = new Marin();
-//   const search = await marin.search('vermeil in gold');
-//   const anime = await marin.fetchAnimeInfo(search.results[0].id);
-//   const sources = await marin.fetchEpisodeSources(anime.episodes![0].id);
+(async () => {
+  const marin = new Marin();
+  const search = await marin.search('vermeil in gold');
+  const anime = await marin.fetchAnimeInfo(search.results[0].id);
+  const sources = await marin.fetchEpisodeSources(anime.episodes![0].id);
 
-//   console.log(sources);
-// })();
+  console.log(sources);
+})();
